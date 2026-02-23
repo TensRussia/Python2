@@ -30,7 +30,7 @@ def test_form(driver):
             (By.CLASS_NAME, "screen"), "15"
             ))
 
-    rez = driver.find_element(By.CLASS_NAME, "screen").text
-    assert rez == "15", ("ошибка вычисления")
+    rezu = driver.find_element(By.CLASS_NAME, "screen").text
+    assert rezu == "15", ("ошибка вычисления")
 
     driver.quit()

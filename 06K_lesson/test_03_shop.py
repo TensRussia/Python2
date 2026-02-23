@@ -37,7 +37,7 @@ def test_form(driver):
     driver.find_element(By.ID, "postal-code").send_keys("620078")
     driver.find_element(By.ID, "continue").click()
     driver.set_page_load_timeout(10)
-    rez = driver.find_element(By.CLASS_NAME, "summary_total_label").text
-    assert rez == "Total: $58.29", ("ошибка вычисления")
+    rezu = driver.find_element(By.CLASS_NAME, "summary_total_label").text
+    assert rezu == "Total: $58.29", ("ошибка вычисления")
 
     driver.quit()

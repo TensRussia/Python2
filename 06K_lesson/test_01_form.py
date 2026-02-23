@@ -53,8 +53,8 @@ def test_form(driver):
     e_mail_field = driver.find_element(By.ID, "e-mail")
     assert "success" in e_mail_field.get_attribute("class"), "e-mail not green"
 
-    phone_field = driver.find_element(By.ID, "phone")
-    assert "success" in phone_field.get_attribute("class"), "Phone not green"
+    ph_field = driver.find_element(By.ID, "phone")
+    assert "success" in ph_field.get_attribute("class"), "Phone not green"
 
     city_field = driver.find_element(By.ID, "city")
     assert "success" in city_field.get_attribute("class"), "City not green"
