@@ -4,6 +4,10 @@ from MainPageCalc import MainPage
 
 def test_calculator():
     browser = webdriver.Chrome()
+    browser.get(
+            "https://bonigarcia.dev/selenium-webdriver"
+            "-java/slow-calculator.html"
+            )
     main_page = MainPage(browser)
     main_page.set_delay()
     main_page.enter_digits()

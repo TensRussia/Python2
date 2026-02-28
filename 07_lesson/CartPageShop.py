@@ -9,17 +9,16 @@ class CartPage:
     def checkout(self):
         self._driver.find_element(By.ID, "checkout").click()
 
-    def UserName(self):
+    def full_user_data(self):
         self._driver.find_element(By.ID, "first-name").send_keys("Иван")
         self._driver.find_element(By.ID, "last-name").send_keys("Иванов")
         self._driver.find_element(By.ID, "postal-code").send_keys("620078")
         self._driver.find_element(By.ID, "continue").click()
-        self._driver.set_page_load_timeout(10)
 
-    def rezult(self):
+    def get_rezult(self):
         rezu = self._driver.find_element(
             By.CLASS_NAME, "summary_total_label").text
         return (rezu)
 
-    def CloseDriver(self):
+    def close_driver(self):
         self._driver.quit()

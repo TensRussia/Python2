@@ -3,19 +3,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-driver = None
-
-
 class MainPage:
 
     def __init__(self, driver):
         self._driver = driver
-        self._driver.get(
-            "https://bonigarcia.dev/selenium-webdriver"
-            "-java/slow-calculator.html"
-            )
-        self._driver.implicitly_wait(4)
         self._driver.maximize_window()
+        self._driver.implicitly_wait(4)
+
 
     def set_delay(self):
         text_input = self._driver.find_element(By.CSS_SELECTOR, "#delay")

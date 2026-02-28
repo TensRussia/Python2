@@ -8,15 +8,16 @@ from webdriver_manager.firefox import GeckoDriverManager
 def test_shop():
     browser = webdriver.Firefox(
         service=FirefoxService(GeckoDriverManager().install()))
+    browser.get("https://www.saucedemo.com/")
     main_shop = MainShop(browser)
     main_shop.log_pass()
     main_shop.select()
 
     cart_shop = CartPage(browser)
     cart_shop.checkout()
-    cart_shop.UserName()
-    cart_shop.rezult()
+    cart_shop.full_user_data()
+    cart_shop.get_rezult()
 
-    rezu = cart_shop.rezult()
+    rezu = cart_shop.get_rezult()
     assert rezu == "Total: $58.29", ("ошибка вычисления")
-    cart_shop.CloseDriver()
+    cart_shop.close_driver()
