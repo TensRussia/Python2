@@ -10,9 +10,9 @@ db_connection_string = os.getenv("DATABASE_URL")
 db = SubjectTable(db_connection_string)
 
 
-def test_get_subjects():
+def test_get_subjects(db, seeded_subject):
     db_result = db.get_subjects()
-    assert len(db_result) > 0
+    assert len(db_result)
 
 
 def test_insert():
